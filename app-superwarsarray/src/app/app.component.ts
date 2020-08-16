@@ -37,11 +37,8 @@ export class AppComponent {
 
   i: number = 0;
 
-  // initialize players with image and strength
   initPlayers = (players) => {
     let detailedPlayers = '';
-
-    // Instead of forloop use Map method
 
     detailedPlayers = players.map((player, i) => {
       return {
@@ -55,17 +52,12 @@ export class AppComponent {
     return detailedPlayers;
   };
 
-  // getting random strength
   getRandomStrength = () => {
     return Math.ceil(Math.random() * 100);
   };
 
-  // Build player template
   buildPlayers = (players, type) => {
     let fragment = '';
-
-    // Instead of using for loop
-    // Use chaining of Array methods - filter, map and join
 
     fragment = players
       .filter((player) => player.type == type)
@@ -81,7 +73,6 @@ export class AppComponent {
     return fragment;
   };
 
-  // Display players in HTML
   viewPlayers = (players) => {
     document.getElementById('heroes').innerHTML = this.buildPlayers(
       players,
